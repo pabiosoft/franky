@@ -5,7 +5,7 @@
 <h1 align="center">Franky</h1>
 
 <p align="center">
-  Vos projets PHP en local, prêts en un clic, sur macOS et Windows.<br>
+  Tout l’écosystème PHP en local, prêt en un clic, sur macOS et Windows.<br>
   <a href="https://github.com/pabiosoft/franky/releases/latest"><b>Télécharger la dernière version</b></a>
 </p>
 
