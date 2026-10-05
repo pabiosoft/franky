@@ -116,6 +116,13 @@ Ne désactivez pas Gatekeeper pour tout le Mac : ce n’est pas nécessaire.
 
    <img alt="Windows : SmartScreen « Windows a protégé votre ordinateur »" src=".github/assets/windows-smartscreen.jpg" width="360">
 
+   > [!IMPORTANT]
+   > **« Le Contrôle intelligent des applications a bloqué une application potentiellement dangereuse »**, avec un seul bouton **OK** ? C’est une autre protection, présente sur certains Windows 11 récemment installés : elle bloque les applications non signées, sans proposer de les exécuter quand même. Franky ne peut pas encore s’installer sur ces ordinateurs, et une version signée est en préparation.
+   >
+   > <img alt="Windows : « Le Contrôle intelligent des applications a bloqué une application potentiellement dangereuse », avec un bouton OK" src=".github/assets/windows-controle-intelligent.jpg" width="420">
+   >
+   > Vous pouvez désactiver cette protection dans **Sécurité Windows › Contrôle des applications et du navigateur › Paramètres du Contrôle intelligent des applications**. Attention : sur la plupart des versions de Windows, elle ne se réactive ensuite qu’en réinstallant Windows. Ne la désactivez que si vous êtes à l’aise avec ce choix.
+
 2. Suivez l’assistant (**Next**, **Install**, **Finish**). L’installation se fait pour votre compte, sans droits administrateur.
 
    <img alt="Assistant d’installation de Franky sous Windows" src=".github/assets/windows-installation.jpg" width="420">
