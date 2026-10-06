@@ -91,6 +91,8 @@ Sur la page de la [dernière version](https://github.com/pabiosoft/franky/releas
 
 > [!NOTE]
 > Franky n’est pas encore signé par Apple ni par Microsoft : chaque système affiche un avertissement au **premier** lancement. C’est attendu, et on ne le fait qu’une fois. Les versions suivantes s’installent depuis Franky (Réglages › Mises à jour).
+>
+> Sous Windows, Franky arrive bientôt sur le **Microsoft Store** : il s’y installera sans avertissement et se mettra à jour tout seul.
 
 <details>
 <summary><b>macOS</b> : installer et ouvrir Franky</summary>
@@ -117,7 +119,7 @@ Ne désactivez pas Gatekeeper pour tout le Mac : ce n’est pas nécessaire.
    <img alt="Windows : SmartScreen « Windows a protégé votre ordinateur »" src=".github/assets/windows-smartscreen.jpg" width="360">
 
    > [!IMPORTANT]
-   > **« Le Contrôle intelligent des applications a bloqué une application potentiellement dangereuse »**, avec un seul bouton **OK** ? C’est une autre protection, présente sur certains Windows 11 récemment installés : elle bloque les applications non signées, sans proposer de les exécuter quand même. Franky ne peut pas encore s’installer sur ces ordinateurs, et une version signée est en préparation.
+   > **« Le Contrôle intelligent des applications a bloqué une application potentiellement dangereuse »**, avec un seul bouton **OK** ? C’est une autre protection, présente sur certains Windows 11 récemment installés : elle bloque les applications non signées, sans proposer de les exécuter quand même. Franky ne peut pas encore s’installer sur ces ordinateurs. Il arrive bientôt sur le **Microsoft Store**, signé par Microsoft : il s’installera alors sans aucun avertissement.
    >
    > <img alt="Windows : « Le Contrôle intelligent des applications a bloqué une application potentiellement dangereuse », avec un bouton OK" src=".github/assets/windows-controle-intelligent.jpg" width="420">
    >
