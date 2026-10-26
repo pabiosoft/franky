@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/pabiosoft/franky/releases/latest"><b>Télécharger</b></a>
+  <a href="#installer"><b>Télécharger</b></a>
   &nbsp;·&nbsp;
   <a href="#fonctionnalités">Fonctionnalités</a>
   &nbsp;·&nbsp;
@@ -58,7 +58,7 @@ Franky installe [FrankenPHP](https://frankenphp.dev) et les services dont vos pr
   <tr>
     <td width="50%" valign="top">
       <h3>Bases de données à la demande</h3>
-      <b>PostgreSQL</b>, <b>MariaDB</b>, <b>Redis</b> et <b>Mailpit</b> pour capturer les e-mails, avec <b>Adminer</b>. Chaque base garde son port, et les identifiants se copient en un clic.
+      <b>PostgreSQL</b>, <b>MariaDB</b>, <b>Redis</b> et <b>Mailpit</b> pour capturer les e-mails, avec <b>Adminer</b>. Ils tournent dans des conteneurs : <b>Apple container</b> sur Mac, les <b>conteneurs WSL</b> sous Windows. Chaque base garde son port, et les identifiants se copient en un clic.
     </td>
     <td width="50%" valign="top">
       <img alt="Services : PostgreSQL, MariaDB, Redis et Mailpit avec leurs identifiants" src=".github/assets/services.jpg">
@@ -76,18 +76,20 @@ Franky installe [FrankenPHP](https://frankenphp.dev) et les services dont vos pr
 </table>
 
 - **Tout reste sur votre ordinateur** : les services n’écoutent que sur `127.0.0.1`, les téléchargements sont vérifiés par empreinte SHA-256.
+- **À jour côté sécurité** : FrankenPHP 1.13.3 et PHP 8.5.12, qui corrige les failles PHP2Shell.
 - **Mises à jour intégrées** : Franky vous prévient d’une nouvelle version et l’installe en un clic, après en avoir vérifié la signature.
 - **En français et en anglais**, en thème clair ou sombre.
 
 ## Installer
 
-Sur la page de la [dernière version](https://github.com/pabiosoft/franky/releases/latest), téléchargez le fichier qui correspond à votre ordinateur :
+Téléchargez la version qui correspond à votre ordinateur :
 
-| Système | Fichier |
+| Système | Téléchargement |
 | --- | --- |
-| macOS, Mac Apple Silicon (M1 et suivants) | `Franky_<version>_macos-apple-silicon.dmg` |
-| macOS, Mac Intel | `Franky_<version>_macos-intel.dmg` |
-| Windows 10 et 11 (64 bits) | `Franky_<version>_windows-x64-setup.exe` |
+| **Mac Apple Silicon** (M1 et suivants) | [**Franky pour Mac** (.dmg)](https://github.com/pabiosoft/franky/releases/latest/download/Franky_macos-apple-silicon.dmg) |
+| **Windows 10 et 11** (64 bits) | [**Franky pour Windows** (.exe)](https://github.com/pabiosoft/franky/releases/latest/download/Franky_windows-x64-setup.exe) |
+
+Les bases de données demandent **macOS 26** sur Mac et **WSL 3.0.1** ou plus récent sous Windows. Sans elles, PHP, vos sites et le HTTPS local fonctionnent. Les Mac Intel ne sont plus pris en charge depuis la version 1.0.2. Toutes les versions sont sur la page des [versions publiées](https://github.com/pabiosoft/franky/releases).
 
 > [!NOTE]
 > Franky n’est pas encore signé par Apple ni par Microsoft : chaque système affiche un avertissement au **premier** lancement. C’est attendu, et on ne le fait qu’une fois. Les versions suivantes s’installent depuis Franky (Réglages › Mises à jour).
@@ -165,7 +167,12 @@ La page **Aide et docs** de l’app contient des guides pas à pas : bases de do
 <details>
 <summary><b>Faut-il Docker ?</b></summary>
 <br>
-Non. Les projets PHP tournent avec FrankenPHP, installé par Franky. Les bases de données utilisent <a href="https://podman.io">Podman</a>, que Franky propose d’installer : avec Homebrew sur macOS, avec winget sur Windows (où Podman a aussi besoin de WSL 2). Pour des projets sans base, FrankenPHP suffit.
+Non. Les projets PHP tournent avec FrankenPHP, fourni avec Franky. Les bases de données tournent dans des conteneurs :
+<ul>
+<li><b>Mac</b> : <a href="https://github.com/apple/container">Apple container</a>, l’outil d’Apple. Franky l’installe en un clic depuis le paquet officiel d’Apple, dont il vérifie la signature ; macOS vous demande votre mot de passe une fois. Il faut un Mac Apple Silicon sous macOS 26.</li>
+<li><b>Windows</b> : les conteneurs WSL, intégrés à Windows (WSL 3.0.1 ou plus récent). S’ils ne sont pas activés, Franky affiche les commandes à lancer une fois.</li>
+</ul>
+Pour des projets sans base, FrankenPHP suffit.
 </details>
 
 <details>
@@ -187,9 +194,15 @@ Franky reste ouvert dans la barre des menus (macOS) ou la barre des tâches (Win
 </details>
 
 <details>
+<summary><b>J’utilisais Franky 1.0.0 avec Podman. Que deviennent mes bases ?</b></summary>
+<br>
+Depuis la version 1.0.2, Franky n’utilise plus Podman. Vos anciennes bases ne sont pas reprises automatiquement : elles restent dans Podman, et Franky repart de bases vides. Exportez ce que vous voulez garder (<code>pg_dump</code>, <code>mariadb-dump</code>), puis réimportez-le dans Franky.
+</details>
+
+<details>
 <summary><b>Comment désinstaller Franky ?</b></summary>
 <br>
-Quittez Franky, puis supprimez l’app (macOS : glissez-la de Applications vers la Corbeille ; Windows : Paramètres › Applications › Franky › Désinstaller). Avant, désactivez dans Franky ce que vous aviez activé : <code>php</code> et <code>composer</code> (Réglages › Terminal) et l’ouverture à la connexion (Réglages › Démarrage).
+Dans Franky, <b>Réglages › Désinstaller › Tout retirer</b> arrête les serveurs et retire ce que Franky a ajouté : commandes du terminal, ouverture à la connexion, certificat local, conteneurs et données. Les dossiers de vos projets ne sont jamais touchés. Quittez ensuite Franky et supprimez l’app (macOS : glissez-la de Applications vers la Corbeille ; Windows : Paramètres › Applications › Franky › Désinstaller). Sur Mac, Apple container reste installé, car d’autres logiciels peuvent s’en servir.
 </details>
 
 ## Aide
@@ -201,5 +214,5 @@ Quittez Franky, puis supprimez l’app (macOS : glissez-la de Applications vers 
 
 <p align="center">
   Développé par <a href="https://pabiosoft.com">Pabiosoft</a>.<br>
-  <sub>FrankenPHP, Podman, PostgreSQL, MariaDB, Redis, Mailpit et Adminer sont des projets tiers, téléchargés depuis leurs sources officielles.</sub>
+  <sub>FrankenPHP, Apple container, PostgreSQL, MariaDB, Redis, Mailpit et Adminer sont des projets tiers, téléchargés depuis leurs sources officielles.</sub>
 </p>
