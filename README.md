@@ -87,14 +87,16 @@ Téléchargez la version qui correspond à votre ordinateur :
 | Système | Téléchargement |
 | --- | --- |
 | **Mac Apple Silicon** (M1 et suivants) | [**Franky pour Mac** (.dmg)](https://github.com/pabiosoft/franky/releases/latest/download/Franky_macos-apple-silicon.dmg) |
-| **Windows 10 et 11** (64 bits) | [**Franky pour Windows** (.exe)](https://github.com/pabiosoft/franky/releases/latest/download/Franky_windows-x64-setup.exe) |
+| **Windows 10 et 11** (64 bits) | [**Microsoft Store**](https://apps.microsoft.com/detail/9pn6qr0r8z43) (recommandé) ou [installateur .exe](https://github.com/pabiosoft/franky/releases/latest/download/Franky_windows-x64-setup.exe) |
+
+<a href="https://apps.microsoft.com/detail/9pn6qr0r8z43"><img src="https://get.microsoft.com/images/fr%20dark.svg" width="180" alt="Obtenir Franky Panel sur le Microsoft Store"></a>
 
 Les bases de données demandent **macOS 26** sur Mac et **WSL 3.0.1** ou plus récent sous Windows. Sans elles, PHP, vos sites et le HTTPS local fonctionnent. Les Mac Intel ne sont plus pris en charge depuis la version 1.0.2. Toutes les versions sont sur la page des [versions publiées](https://github.com/pabiosoft/franky/releases).
 
 > [!NOTE]
-> Franky n’est pas encore signé par Apple ni par Microsoft : chaque système affiche un avertissement au **premier** lancement. C’est attendu, et on ne le fait qu’une fois. Les versions suivantes s’installent depuis Franky (Réglages › Mises à jour).
+> Sous Windows, installez de préférence Franky depuis le **Microsoft Store**, où il s’appelle **Franky Panel** : il est signé par Microsoft, s’installe sans avertissement et se met à jour tout seul.
 >
-> Sous Windows, Franky arrive bientôt sur le **Microsoft Store** : il s’y installera sans avertissement et se mettra à jour tout seul.
+> Le `.dmg` et l’installateur `.exe` ne sont pas encore signés par Apple ni par Microsoft : chaque système affiche un avertissement au **premier** lancement. C’est attendu, et on ne le fait qu’une fois. Les versions suivantes s’installent depuis Franky (Réglages › Mises à jour).
 
 <details>
 <summary><b>macOS</b> : installer et ouvrir Franky</summary>
@@ -116,12 +118,16 @@ Ne désactivez pas Gatekeeper pour tout le Mac : ce n’est pas nécessaire.
 <summary><b>Windows</b> : installer et ouvrir Franky</summary>
 <br>
 
+**Le plus simple** : ouvrez [Franky Panel sur le Microsoft Store](https://apps.microsoft.com/detail/9pn6qr0r8z43) et cliquez sur **Obtenir**. Franky s’installe sans avertissement, puis le Store le met à jour.
+
+**Avec l’installateur `.exe`** :
+
 1. Lancez `Franky_<version>_windows-x64-setup.exe`. Si SmartScreen affiche « Windows a protégé votre ordinateur », cliquez sur **Informations complémentaires**, puis **Exécuter quand même**.
 
    <img alt="Windows : SmartScreen « Windows a protégé votre ordinateur »" src=".github/assets/windows-smartscreen.jpg" width="360">
 
    > [!IMPORTANT]
-   > **« Le Contrôle intelligent des applications a bloqué une application potentiellement dangereuse »**, avec un seul bouton **OK** ? C’est une autre protection, présente sur certains Windows 11 récemment installés : elle bloque les applications non signées, sans proposer de les exécuter quand même. Franky ne peut pas encore s’installer sur ces ordinateurs. Il arrive bientôt sur le **Microsoft Store**, signé par Microsoft : il s’installera alors sans aucun avertissement.
+   > **« Le Contrôle intelligent des applications a bloqué une application potentiellement dangereuse »**, avec un seul bouton **OK** ? C’est une autre protection, présente sur certains Windows 11 récemment installés : elle bloque les applications non signées, sans proposer de les exécuter quand même. L’installateur `.exe` ne passe donc pas sur ces ordinateurs : installez Franky depuis le [**Microsoft Store**](https://apps.microsoft.com/detail/9pn6qr0r8z43), signé par Microsoft, qui s’installe sans aucun avertissement.
    >
    > <img alt="Windows : « Le Contrôle intelligent des applications a bloqué une application potentiellement dangereuse », avec un bouton OK" src=".github/assets/windows-controle-intelligent.jpg" width="420">
    >
