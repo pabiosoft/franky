@@ -70,13 +70,13 @@ Franky installe [FrankenPHP](https://frankenphp.dev) et les services dont vos pr
     </td>
     <td width="50%" valign="top">
       <h3><code>php</code> et <code>composer</code> partout</h3>
-      Le PHP de Franky et son Composer dans votre terminal et votre éditeur (PhpStorm, VS Code), sans rien installer d’autre. Workers de file d’attente et rechargement à chaud inclus.
+      Le PHP de Franky et son Composer dans votre terminal et votre éditeur (PhpStorm, VS Code), sans rien installer d’autre. Franky repère les workers dont votre projet a besoin (Messenger, files d’attente Laravel, planificateur…) et le rechargement à chaud est inclus.
     </td>
   </tr>
 </table>
 
 - **Tout reste sur votre ordinateur** : les services n’écoutent que sur `127.0.0.1`, les téléchargements sont vérifiés par empreinte SHA-256.
-- **À jour côté sécurité** : FrankenPHP 1.13.3 et PHP 8.5.12, qui corrige les failles PHP2Shell.
+- **À jour côté sécurité** : FrankenPHP 1.13.5 (Caddy 2.11.9) et PHP 8.5.12.
 - **Mises à jour intégrées** : Franky vous prévient d’une nouvelle version et l’installe en un clic, après en avoir vérifié la signature.
 - **En français et en anglais**, en thème clair ou sombre.
 
